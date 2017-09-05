@@ -1,10 +1,173 @@
 <!DOCTYPE html>
 <html>
-<head> My Website home page </head>
+<head>
+	<title>My Personal Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="PersonalPortfolio.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"><!-- Google Font for Heading -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><!-- Google Font for Paragraphs -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!-- For symbols in the contact section -->
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="PersonalPortfolio.js"></script>
+</head>
 <body>
-<h2> This website is hosted by github </h2>
+	<nav class="navbar navbar-default navbar-fixed-top affix">
+	 	<div class="container-fluid">
+	 		<div class="navbar-header">
+	 		<!-- Code for the hamburger for mobile users-->
+		 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-dem" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
 
-<a href="https://ciaranroft.github.io/page2.html">Next Page</a>
+		      	<a href="#" class="navbar-brand ">Ciaran Roft Portfolio</a>
+	      	</div>
 
+			<div class="collapse navbar-collapse" id="bs-nav-dem">
+				
+				<ul class="nav navbar-nav navbar-right">
+		 			<li class="active"><a href="#">Home</a></li>
+		 			<li><a href="#about">About</a></li>
+		 			<li><a href="#portfolio">Portfolio</a></li>
+		 			<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		
+		</div>
+	</nav>
+
+	<div class="header">
+		<div class="header-text text-center">
+			<h1>Ciaran Roft</h1>
+			<hr class="header-line">
+			<p>I am a highly motivated and adaptable software design and development graduate, with a keen intrest in full stack web development, and artificial intelligence.</p>
+			<button type="button" class="btn btn-lg btn-primary contact-btn">Contact Me!</button>	
+		</div>
+	</div>
+
+	<div id="about">
+		<div class="about-heading">
+				<h2>About</h2>
+				<hr class = "section-line">
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12"><!-- The About Picture -->
+					<div class="about-img">
+						<img class="user-picture img-responsive" src="http://media.istockphoto.com/photos/male-silhouette-as-avatar-profile-picture-picture-id519078727?k=6&m=519078727&s=612x612&w=0&h=ptX9HZCoDQh3i5ZjC_j3HltiaeeJK-HfHrCa35Chx3M=">	
+					</div>					
+				</div>
+				<div class="col-sm-12">
+					<div class="about-text text-center">
+						<p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+						<p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="portfolio">
+
+		<div class="portfolio-heading">
+			<h2>Portfolio</h2>
+			<hr class = "section-line">
+			<p class="portfolio-description text-center">This is my project section, say somthing about the project section, something with enough words to get a good idea of what a big paragraph will look like.</p>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-lg-4 col-sm-12 projects"> 
+					<div class="image-wrap"><!-- Change to an a tag to have a link to projects! -->
+	      				<img class = "img-responsive" src="images/tribute-page.PNG">
+	        			<div class="tint text-center">
+	        				<h3 class="image-heading">Hip-Hop Tribute Page</h3>
+	          				<p class="image-description">Tribute Page build for the FCC curiculum.</p>
+	        			</div>
+	       			</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-12 projects">
+					<div class="image-wrap">
+						<img class = "img-responsive" src= "https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?dpr=1&auto=format&fit=crop&w=1450&h=825&q=80&cs=tinysrgb&crop=">
+						<div class="tint text-center">
+	        				<h3 class="image-heading">Coming Soon</h3>
+	          				<p class="image-description">Project currently underconstruction.</p>
+	        			</div>
+		        	</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-12 projects">
+					<div class="image-wrap">
+						<img class = "img-responsive" src= "https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?dpr=1&auto=format&fit=crop&w=1450&h=825&q=80&cs=tinysrgb&crop=">
+						<div class="tint text-center">
+	        				<h3 class="image-heading">Coming Soon</h3>
+	          				<p class="image-description">Project currently underconstruction.</p>
+	        			</div>
+		        	</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-12 projects">
+					<div class="image-wrap">
+						<img class = "img-responsive" src= "https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?dpr=1&auto=format&fit=crop&w=1450&h=825&q=80&cs=tinysrgb&crop=">
+						<div class="tint text-center">
+	        				<h3 class="image-heading">Coming Soon</h3>
+	          				<p class="image-description">Project currently underconstruction.</p>
+	        			</div>
+		        	</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-12 projects">
+					<div href="#" class="image-wrap">
+						<img class = "img-responsive" src= "https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?dpr=1&auto=format&fit=crop&w=1450&h=825&q=80&cs=tinysrgb&crop=">
+						<div class="tint text-center">
+	        				<h3 class="image-heading">Coming Soon</h3>
+	          				<p class="image-description">Project currently underconstruction.</p>
+	        			</div>
+		        	</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-12 projects">
+					<div href="https://www.youtube.com/watch?v=z0P9liI8T9w" class="image-wrap">
+						<img class = "img-responsive" src= "https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?dpr=1&auto=format&fit=crop&w=1450&h=825&q=80&cs=tinysrgb&crop=">
+						<div class="tint text-center">
+	        				<h3 class="image-heading">Coming Soon</h3>
+	          				<p class="image-description">Project currently underconstruction.</p>
+	        			</div>
+		        	</div>
+				</div>
+
+			</div>
+		</div>
+	</div><!-- End of Portfolio Section -->
+	<div id="contact">
+		<div class="contact-heading">
+			<h2>Contact</h2>
+			<hr class = "section-line">
+		</div>
+		<div class = "container-fluid">
+			<div class="row text-center">
+				<div class="col-lg-4 col-sm-12"">
+					<a href="mailto:ciaranroft@hotmail.com"><i class="fa fa-envelope my-fa" aria-hidden="true"></i></a>
+				</div>
+				
+				<div class="col-lg-4 col-sm-12">
+					<a href="https://github.com/CiaranRoft"><i class="fa fa-github my-fa" aria-hidden="true"></i></a>
+				</div>
+
+				<div class="col-lg-4 col-sm-12">
+					<a href="https://www.linkedin.com/in/ciaranroft/"><i class="fa fa-linkedin-square my-fa" aria-hidden="true"></i></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
 </body>
 </html>

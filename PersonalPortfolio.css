@@ -1,0 +1,246 @@
+body{
+	width:100%;
+}
+.navbar{
+	background-color: transparent;
+	border-color: rgba(255,255,255, 0.3);
+}
+
+/*.navbar-default.affix {
+    background-color: #fff;
+    border-color: rgba(34,34,34,.05);
+}*/
+
+.navbar-default .navbar-brand {
+	color: #fff;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: yellow;
+}
+
+/*.navbar-default .navbar-nav > li > a{
+	color:#fff;
+}*/
+
+/*For the background color of the expanded hamburger*/
+/*.navbar-default .navbar-collapse{
+    background: #D4CAD5;
+}*/
+
+.header{
+	position: relative;
+	height: 100vh;	/*CSS3 gives us viewport-relative units. 100vw means 100% of the viewport width.*/
+	background: url(https://images.unsplash.com/photo-1486020921558-2ec858ae2815?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=);
+	background-size: cover;
+	background-position: bottom center; /* When the screen is resized it focuses on this position*/
+}
+.header-text{
+	background: rgba(0, 0, 0, 0.38);
+	/*border: 3px solid #9c4be8;*/
+	border-radius: 20px;
+	color: white;
+	left:15%; 
+	width:70%;
+	height:auto;
+	top:25%; /*Center vertically*/
+	position:absolute;
+	font-family: 'Roboto Condensed',sans-serif; 
+}
+.header-text h1{
+	font-weight: 700;
+	font-size: 50px;
+}
+
+.header-text p{
+	font-size: 18px;
+}
+
+/*For mobile users!*/
+@media (min-width: 768px){
+	.header-text p{
+		font-size: 30px;
+	}
+}
+
+hr.header-line{
+	margin: 0 auto;
+    height: 12px;
+    max-width: 200px;
+    border-top: 1px solid #7a34a6;
+    box-shadow: inset 0 12px 14px -12px #409/*rgba(0, 0, 0, 0.5);*/
+}
+
+.contact-btn{
+	margin-top: 80px;
+	margin-bottom: 30px;
+	width: 200px;
+	height: 80px;
+	border-radius: 30px;
+	background-color: #409;
+    border-color: #4a2370;
+}
+
+/*The horizontal line in sections*/
+hr.section-line{
+    height: 12px;
+    margin: 0;
+    max-width: 120px;
+    border-top: 1px solid #000;
+    box-shadow: inset 0 12px 14px -12px #409/*rgba(0, 0, 0, 0.5);*/
+}
+
+/*About Section*/
+#about{
+	padding-top: 40px;
+	height: auto;
+	background: #ddd;
+}
+
+
+.about-heading{
+	padding-left: 15px;
+	padding-bottom: 20px;
+	font-family: 'Lato', sans-serif;
+}
+
+.about-heading h2{
+	font-size: 40px;
+}
+
+.user-picture.img-responsive{
+	margin: 0 auto;
+	max-width: 350px;
+	max-height: 200px;
+	border-radius: 10px 70px 30px ;
+	border: 5px #409 solid;
+	
+}
+.about-text{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin: 0 auto;
+	max-width: 768px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	line-height: 24px;
+	letter-spacing: 0.07em;
+	font-size: 16px;
+}
+/*For Mobile Users Only*/
+@media (min-width: 768px){
+	.about-text{
+		font-size: 22px;
+	}
+}
+/*Portfolio Section*/
+
+#portfolio{
+	padding-top: 50px;
+	padding-bottom: 30px;
+	background:#333;
+	display:block;
+	/*overflow:auto;*/
+}
+
+.portfolio-heading{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 30px;
+	font-family: 'Lato', sans-serif;
+	color: #ddd;
+}
+
+.portfolio-heading h2{
+	font-size: 40px;
+}
+
+.portfolio-heading hr.section-line{
+	max-width: 160px; 
+}
+
+.portfolio-heading .portfolio-description{
+	margin: 30px auto;
+	max-width: 768px;
+	font-size: 23px;
+}
+
+.projects{
+	padding: 15px;
+}
+
+.image-wrap {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;  
+}
+
+/*Making a DIV that is tinted black but invisible */
+.image-wrap .tint {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color:white;
+  background: rgba(68, 0, 153, 0.77);
+  border-radius: 10px;
+  opacity: 0;
+  transition:opacity .5s ease;
+}
+
+/*When hover the black tinted DIV becomes invisible*/
+.image-wrap:hover .tint {
+  opacity: 1;
+
+}
+
+/*The images and descriptions*/
+.image-wrap .img-responsive{ 
+	max-width: 100%
+	height: auto;
+	border-radius: 10px;
+}
+
+.image-heading{
+	width: 100%;
+    position: absolute;
+    top: 25%;
+}
+
+.image-description{
+	width: 100%;
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+}
+
+/*Contact Section*/
+
+#contact{
+	height: auto;
+	padding-top: 40px;
+}
+.contact-heading{
+	padding-left: 15px;
+}
+.contact-heading hr.section-line{
+	max-width: 145px; 
+}
+.contact-heading h2{
+	font-size: 40px;
+}
+
+.fa.my-fa{
+	font-size:250px;
+	padding-bottom: 20px;
+}
+
+/*Bootstrap has links set to blue*/
+a .my-fa{
+	color: #333;
+}
+
+a .my-fa:hover{
+	color: #409
+}
