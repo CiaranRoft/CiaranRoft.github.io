@@ -1,0 +1,64 @@
+html {
+    min-height: 100% /*If you want the gradient to stretch the entire height of the page*/
+}
+
+body{
+	font-family: Robot;
+	background:linear-gradient(rgba(196, 198, 203, 0.2), rgba(144, 136, 146, 0.9));
+}
+
+a{
+	color: #4a2efc;
+}
+
+.jumbotron{
+	background: rgba(79, 71, 173, 0.0);
+	border: 1px solid rgba(68, 11, 80, 0.0); 
+	margin-bottom: 10px;
+}
+
+
+hr:after { 
+  content: '\00266B';
+  display: inline-block; 
+  position: relative; 
+  top: -12px; 
+  left: 50%; 
+  padding: 0 3px; 
+  background: rgb(220, 90, 220);
+  color: #fff; 
+  font-size: 18px; 
+}
+
+/*The bullet points*/
+.bullet{
+	padding-bottom: 10px;
+	list-style-type: square;
+	font-size: 30px;
+	text-align: justify;
+	line-height: 1;
+}
+/*The txt of the bullet points*/
+.text{
+	font-size: 20px;
+}
+
+/*Each Decade section*/
+.well.row{
+	margin-right: auto;
+	margin-left: auto;
+	box-shadow: 10px 5px 10px rgba(0,0,0,0.56); /**/
+}
+.well.row.seventies{
+	background: rgba(176, 90, 171, 0.5);
+	border: 1px solid rgba(68, 11, 80, 0.8); 
+}
+.well.row.eighties{
+
+	background: rgba(109, 171, 73, 0.5);
+	border: 1px solid rgba(25, 80, 11, 0.8); 
+}
+.well.row.ninghties{
+	background:rgba(239, 158, 46, 0.5);
+	border: 1px solid rgba(163, 35, 35, 0.8);
+}

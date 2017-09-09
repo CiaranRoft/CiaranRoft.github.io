@@ -1,0 +1,58 @@
+/*Game Of Thrones Font (All Capitals)*/
+@font-face {
+    font-family:"gameofthrones";
+    src: url("fonts/gameofthrones.ttf"); /*TTF file for CSS3 browsers */
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	background: url("http://www.wallpaperscharlie.com/wp-content/uploads/2016/06/4k-ultra-hd-game-thrones-wallpapers-7.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.container{
+	max-width: 700px;
+	margin: 360px auto auto auto;/*Find Better Way to position the container*/
+	background: rgba(206, 208, 209, 0.9);
+	color: #241717;
+}
+
+
+.quote-container{
+	height: 200px;
+	padding: 20px;
+	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@media (min-width: 768px){
+	.quote-container{
+		font-size: 20px;
+	}
+}
+
+/*The Author paragraph*/
+.author{
+	margin-top: 50px;
+	font-size: 20px;
+	font-family: 'gameofthrones', sans-serif;
+}
+
+@media (min-width: 768px){
+	.author{
+		font-size: 25px;/*Increasing the font size on larger screens*/
+	}
+}
+
+/*Buttons Div*/
+.buttons{
+	padding: 10px;
+}
+
+#tweet-quote{
+	float: right;
+	font-size: 25px;
+}
