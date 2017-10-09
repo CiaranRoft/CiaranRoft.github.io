@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Weather API</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="WeatherAPI.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="WeatherAPI.js"></script>
+</head>
+<body>
+	<div class = "title text-center">
+		<h1>Local Weather App</h1>
+	</div>
+	
+	<div class="container text-center currentWeather">
+		<div class="row">
+			<div id="no-padding" class="col-md-5 col-md-offset-7">	
+				<div class="btn-group">
+	      			<button type="button" id = "celsius" class="btn btn-default temp-btn active">C</button>
+	     			<button type="button" id = "farenheight" class="btn btn-default temp-btn">F</button>
+				</div>	
+			</div>
+			<div class="col-md-8 text-right">
+					<span id="temperature" class="temperature"></span> <span class="unit"> C</span>
+			</div>	
+		</div>	
+		<div class="row">
+			<div class="col-sm-12 location-container">
+				<i class="fa fa-map-marker" aria-hidden="true"></i><span id="location"></span>
+			</div>
+
+			<div class="col-sm-12 weather-container">
+				<i class="fa fa-sun-o" aria-hidden="true"></i><span id="weather" class="weather"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div id="no-padding" class="col-md-5">	
+				<div class="btn-group">
+	      			<button type="button" id = "celsius" class="btn btn-default temp-btn active">Celsius</button>
+	     			<button type="button" id = "farenheight" class="btn btn-default temp-btn">Farenheight</button>
+				</div>	
+			</div>
+			<div class="col-md-7 text-right">
+					<span id="wind" class="wind"></span> <span class="unit"> mph</span>
+			</div>	
+		</div>
+	</div>
+
+	
+	
+	
+
+</body>
+</html>

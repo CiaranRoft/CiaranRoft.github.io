@@ -1,0 +1,112 @@
+/*Information box*/
+html{
+	height: 100%;
+}
+
+body{
+	background: url("http://www.wallpaperscharlie.com/wp-content/uploads/2016/06/4k-ultra-hd-game-thrones-wallpapers-7.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.currentWeather{
+	margin-top: auto;
+	margin-bottom: auto;
+	border: 3px solid #333;
+	border-radius: 0px;
+	width: 80%;
+	height :27rem;
+}
+
+/*Float the button group into the left corner*/
+.btn-group{
+	float:right;
+}
+
+/*Temperature Buttons*/
+.btn.temp-btn{
+	border-radius: 0px;
+	background-color: #fff;
+	border-color: #426FC5;
+	color: #426FC5;
+	width:40px;
+	font-size: 10px;
+}
+
+/*The button hover*/
+.btn.temp-btn:hover{
+	background-color: #9fb9ea;
+	border-color: #426FC5;
+	color:#fff;
+}
+
+/*Used to take away the highlight on a button that is in focus*/
+.btn.temp-btn:focus{
+	outline: none; 
+}
+
+/*The active button*/
+.btn.temp-btn.active{
+	background-color: #426FC5;
+	border-color: #426FC5;
+	color: #fff;
+}
+
+/*Class to remove the left and rigth padding from the temp buttons so they can sit in the top corner*/
+#no-padding{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/*Temperature*/
+.temperature{
+	font-size: 25px;
+}
+
+.unit{
+	font-size: 15px;
+}
+
+/*Location*/
+.location-container{
+	padding-top: 20px;
+	font-size: 15px;
+}
+.fa-map-marker{
+	padding-right: 10px;
+}
+
+.fa-sun-o{
+	padding-right: 10px;
+}
+
+.weather-container{
+	padding-top: 15px;
+	font-size: 25px;
+}
+
+.wind{
+	font-size: 25px;
+}
+
+/*For screens largers than 650px*/
+@media (min-width: 650px){
+	.temperature{
+		font-size: 35px;
+	}
+	.unit{
+		font-size: 25px;
+	}
+
+	.location-container{
+		padding-top: 50px;
+		font-size: 20px;
+	}
+	.weather-container{
+		padding-top: 20px;
+		font-size: 30px;
+	}
+	.wind{
+		font-size: 35px;
+	}
+}
