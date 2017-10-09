@@ -1,5 +1,5 @@
 var lat,lon;
-var link = "http://api.openweathermap.org/data/2.5/weather?";
+var link = "https://api.openweathermap.org/data/2.5/weather?";
 
 $(document).ready(function(){
 	console.log("Here");
