@@ -1,10 +1,12 @@
 var lat,lon;
-var link = "https://fcc-weather-api.glitch.me/api/current?";
+var link = "http://api.openweathermap.org/data/2.5/weather?";
 
 $(document).ready(function(){
+	console.log("Here");
 	// Function to retrieve the users geolocation
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(position) {
+			
 			lat = "lat="+position.coords.latitude;
 			lon = "lon="+position.coords.longitude;
     		getWeather(lat, lon);
@@ -13,7 +15,7 @@ $(document).ready(function(){
     } else{
     	console.log("Geolocation not supported by Browser")
     } 
-    
+
     // Code for the Farenheight button
     $('#farenheight').click(function(){
     	if(!$("#farenheight").hasClass("active")){
@@ -22,11 +24,11 @@ $(document).ready(function(){
 
 			// Changing from Celsius to Fareheight
 			var temp = $(".temperature").text();
-    		temp = ((temp * (9/5)) + 32).toFixed(1);
+    		temp = ((temp * (9/5)) + 32).toFixed(2);
 
     		
     		$('#temperature').text(temp);
-    		$('.temp-unit').text("F");
+    		$('.unit').text("F");
 		}
 	});
 
@@ -37,67 +39,74 @@ $(document).ready(function(){
 			$('#farenheight').toggleClass('active'); // Deactivate
 
 			var temp = $(".temperature").text();
-    		temp = ((temp-32) * (5/9)).toFixed(1);
+    		temp = ((temp-32) * (5/9)).toFixed(2);
     		
     		$('#temperature').text(temp);
-    		$('.temp-unit').text("C");
+    		$('.unit').text("C");
 
 		}
 	});
 });
 
+// Function to convert from Unix UTC time to local time
+function convertTimestamp(timestamp){
+	var d = new Date(timestamp * 1000), 
+		hh = d.getHours(),
+		min = ('0' + d.getMinutes()).slice(-2); // Adding the leading Zero for times like 7:05 AM
+		return hh + ':' + min;
+}
+
+function setBackgroundImage(current_weather){
+	console.log(current_weather);
+	var weather_picture = {
+		Clouds: "https://images.unsplash.com/photo-1430950716796-677ecbc99485?dpr=1&auto=compress,format&fit=crop&w=1000&h=&q=80&cs=tinysrgb&crop=",
+		Rain: "https://images.unsplash.com/photo-1501762371526-e848481e125b?dpr=1&auto=compress,format&fit=crop&w=1000&h=&q=80&cs=tinysrgb&crop=",
+		Clear: "https://images.unsplash.com/photo-1494187570835-b188e7f0f26e?dpr=1&auto=compress,format&fit=crop&w=1000&h=&q=80&cs=tinysrgb&crop="
+	};
+	
+	$('body').css('background-image', 'url(' + weather_picture[current_weather] + ')');
+}
+
 function getWeather(lat, lon){
-	var url = link + lat + "&" + lon // Building the url for the weather API using the users longitude and latitude
+	var api = "&APPID=d996fdb71bbcf67056842061b524b44f";
+	var url = link + lat +"&"+ lon + api;// Building the url for the weather API using the users longitude and latitude
 	$.getJSON(url, function(weather_data){
-		console.log(weather_data);
-
-		// Gathering all of the nessesary information
-      	var loc = weather_data.name +" "+ weather_data.sys.country;
-      	var temp = weather_data.main.temp
-      	var w_description = titleCaseReg(weather_data.weather[0].description)
-      	var weather = weather_data.weather[0].main +" - "+ w_description;
-      	var wind = weather_data.wind.speed;
-
-      	var direction = getCardinal(weather_data.wind.deg);
+		console.log(JSON.stringify(weather_data));
 
 
-    	$('#location').text(loc);
-    	$('#temperature').text(temp);
-    	$('#weather').text(weather);
-    	$('#wind').text(wind);
+		//  Extracting the location
+		var location = weather_data.name +" "+ weather_data.sys.country;
+		$('#location').text(location);
+
+		// Building the URL to get the icon
+		var icon_url = "https://openweathermap.org/img/w/" +weather_data.weather[0].icon+".png";
+		$('#w-icon').attr('src', icon_url).width(70);
+
+		// Extracting the temperature
+		var temperature = (weather_data.main.temp - 273.15).toFixed(2);
+		$('#temperature').text(temperature);
+
+		// Extracting the weather
+		var weather = weather_data.weather[0].main;
+		$('#weather').text(weather);
+
+		// DO NOT LEAVE THIS HERE!!!
+		setBackgroundImage(weather);
+
+		// Extracting the wind
+		$('#wind').text(weather_data.wind.speed);
+
+		// Extracting the wind
+		$('#sunrise').text(convertTimestamp(weather_data.sys.sunrise));
+
+		// Extracting the wind
+		$('#sunset').text(convertTimestamp(weather_data.sys.sunset));
+
+		// Extracting the Humidity
+		$('#humidity').text(weather_data.main.humidity + "%");
+
+		// Extracting the Air Pressure
+		$('#pressure').text(weather_data.main.pressure);
+
 	});
 }
-
-// Function to calculate the cardinal direction of the wind
-function getCardinal(degree){
-	if(degree > 0 && degree < 359){
-		if(degree < 45 ){
-			console.log("N");
-		}
-		else if(degree < 90 ){
-			console.log("NE");
-		}
-		else if(degree < 135 ){
-			console.log("E");
-		}
-		else if(degree < 180 ){
-			console.log("S");
-		}
-		else if(degree < 225 ){
-			console.log("SW");
-		}
-		else if(degree < 270 ){
-			console.log("W");
-		}
-		else{
-			console.log("NW");
-		}
-	}else
-		console.log("Direction not between 0 - 360")
-}
-
-// Function to Title Case the description of weather.
-function titleCaseReg(str){
-	return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-}
-

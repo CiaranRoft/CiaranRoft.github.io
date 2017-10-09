@@ -1,25 +1,28 @@
-/*Information box*/
 html{
 	height: 100%;
 }
 
 body{
-	background: url("http://www.wallpaperscharlie.com/wp-content/uploads/2016/06/4k-ultra-hd-game-thrones-wallpapers-7.jpg") no-repeat;
+	/*Backgound Image is added in via jQuery depending on the weather in your location*/
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
+/*Information box*/
 .currentWeather{
-	margin-top: auto;
-	margin-bottom: auto;
-	border: 3px solid #333;
-	border-radius: 0px;
+	margin-top: 50px;
+	padding-bottom: 20px;
+	
+	/*background: rgba(47, 146, 87, 0.65);*/
+	/*border-radius: 0px;*/
 	width: 80%;
-	height :27rem;
+	height :auto;
 }
 
-/*Float the button group into the left corner*/
+/*Float the button group into the right corner*/
 .btn-group{
+	padding-top: 10px;
 	float:right;
 }
 
@@ -29,7 +32,7 @@ body{
 	background-color: #fff;
 	border-color: #426FC5;
 	color: #426FC5;
-	width:40px;
+	width:50%;/*Each button takes up 50% of the button group*/
 	font-size: 10px;
 }
 
@@ -56,8 +59,11 @@ body{
 #no-padding{
 	padding-left: 0;
 	padding-right: 0;
+	padding-top:0;
 }
-
+.temp-container{
+	padding-top: 10px;
+}
 /*Temperature*/
 .temperature{
 	font-size: 25px;
@@ -69,44 +75,76 @@ body{
 
 /*Location*/
 .location-container{
-	padding-top: 20px;
-	font-size: 15px;
+	padding-top: 10px;
+	font-size: 25px;
 }
 .fa-map-marker{
 	padding-right: 10px;
 }
 
-.fa-sun-o{
-	padding-right: 10px;
-}
-
+/*Weather*/
 .weather-container{
 	padding-top: 15px;
-	font-size: 25px;
+	padding-bottom: 5px;
+	height:100px;
+	font-size: 35px;
 }
 
-.wind{
-	font-size: 25px;
+.weather-style{
+	padding-left: 15px;
+	border-left: 1px solid #000;
 }
+
+/*The Table the contains additional information*/
+.parameter-container{
+	width:100%;
+	margin:0 auto;
+	padding-bottom:10px;
+}
+
+/*Lables of the table*/
+thead td{
+  font-size:16px;
+  font-weight:700;
+  background: #28518c;
+  color:#fff;
+  padding:10px;
+  border-top:1px solid #858d99;
+}
+
+/*Every other cell of the table*/
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+  font-size:15px;
+  padding:5px 5px 5px 5px;
+}
+
+/*Getting the different color for each row*/
+tr.odd{
+	background: #f0f3f5;
+	color: #5f6062;
+}
+
+tr.even{
+	background: #8da8de;
+	color: #f0f3f5;
+}
+
 
 /*For screens largers than 650px*/
-@media (min-width: 650px){
+@media (min-width: 500px){
 	.temperature{
-		font-size: 35px;
+		font-size: 25px;
 	}
 	.unit{
 		font-size: 25px;
 	}
 
 	.location-container{
-		padding-top: 50px;
-		font-size: 20px;
+		font-size: 25px;
 	}
 	.weather-container{
-		padding-top: 20px;
 		font-size: 30px;
-	}
-	.wind{
-		font-size: 35px;
 	}
 }
