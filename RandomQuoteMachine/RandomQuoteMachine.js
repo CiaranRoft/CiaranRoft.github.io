@@ -7,7 +7,7 @@ $(document).ready(function(){
   function fetchQuote(){
     $.getJSON("https://got-quotes.herokuapp.com/quotes/", function(data){
       var quote = data.quote;
-      var author = data.character
+      var author = data.character;
       writeQuote(quote, author);
     });
   }
@@ -19,7 +19,7 @@ $(document).ready(function(){
 
   $('#tweet-quote').click(function(){
     window.open("https://twitter.com/home/?status=" + $('.quote').text() + "  " + $('.author').text())
-  })
+  });
 
 });
 

@@ -14,35 +14,49 @@ body{
 	background-position: center;
 }
 .container{
-	max-width: 700px;
-	margin: 360px auto auto auto;/*Find Better Way to position the container*/
+	max-width: 80%;
+	border-radius: 10px;
+	margin-top:230px;
 	background: rgba(206, 208, 209, 0.9);
 	color: #241717;
 }
-
+@media (min-width: 750px){
+	.container{
+		margin-top:25%;
+	}
+}
 
 .quote-container{
-	height: 200px;
-	padding: 20px;
-	font-size: 16px;
+	height: 250px;
+	padding: 10px;
+	font-size: 14px;
 	font-family: 'Ubuntu', sans-serif;
 }
 
-@media (min-width: 768px){
+@media (min-width: 600px){
 	.quote-container{
 		font-size: 20px;
 	}
 }
 
+.quote{
+	height:150px;
+}
+@media (min-width: 768px){
+	.quote{
+		height: 85px;
+	}
+}
+
 /*The Author paragraph*/
 .author{
-	margin-top: 50px;
-	font-size: 20px;
+	font-size: 16px;
 	font-family: 'gameofthrones', sans-serif;
 }
 
 @media (min-width: 768px){
 	.author{
+		margin-top: 50px;
 		font-size: 25px;/*Increasing the font size on larger screens*/
 	}
 }
@@ -54,5 +68,5 @@ body{
 
 #tweet-quote{
 	float: right;
-	font-size: 25px;
+	font-size: 20px;
 }
