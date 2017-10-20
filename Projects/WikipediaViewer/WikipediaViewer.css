@@ -1,0 +1,121 @@
+body{
+	background-color: #b9c3f1;
+	margin:0;
+	display:block;
+}
+
+a{
+	text-decoration:none;
+}
+
+.headline{
+	font-family: 'Roboto Slab', serif;
+	color:#d8880b;
+	text-align: center;
+}
+.search{
+	width:100%;
+}
+
+.search_term{
+ 	border: 3px solid #d8880b;
+ 	padding: 5px;
+  	height: 20px;
+  	width: 95%;
+  	outline: none;
+  	color: #9DBFAF;
+}
+
+.search_term:focus{
+  	color: #111;
+}
+
+.wrap{
+	margin: 10px auto 0 auto;
+	width:80%;
+}
+
+.float_search{
+	margin: 0 auto;
+}
+
+/*Add button later*/
+/*.search_button { 
+  position: absolute;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}*/
+
+
+
+#wiki_results{
+	height:100%;
+	overflow: hidden;
+	display: block;
+	/*padding :110px 50px 50px;*/
+}
+
+#link{
+	height: 120px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 5% auto;
+	width: 80%;
+	padding: 5%;
+	background-color: rgba(101, 96, 96, 1);
+	box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
+}
+
+#link:hover{
+	background-color: rgba(52, 49, 49, 0.86);
+}
+
+.heading{
+	font-family: monospace;
+	font-size: 18px;
+	font-weight: 700;
+	color: #d8880b;
+	margin: 0;
+}
+
+.description{
+	font-size: 14px;
+	font-weight: normal;
+	text-align: justify;
+	color: #edd;
+}
+
+@media (min-width: 700px){
+
+	#wiki_results{
+		padding :50px;
+	}
+
+	#link{
+		width:40%;
+		padding:20px;
+		margin: 1.5% 1.5% 1.5% 1.5%;
+	}
+
+	#link:nth-of-type(odd){
+		float: left;
+	}
+	#link:nth-of-type(even){
+		float: right;
+	}
+
+	.heading{
+		font-size: 22px;	
+	}
+
+	.description{
+		font-size: 18px;
+	}
+}

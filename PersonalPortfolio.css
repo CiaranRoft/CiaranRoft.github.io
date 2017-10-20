@@ -209,13 +209,12 @@ hr.section-line{
 .image-heading{
 	width: 100%;
     position: absolute;
-    /*top: 25%;*/
+    margin-top: 50px;
 }
 
 .image-description{
 	width: 100%;
     position: absolute;
-    /*top: 50%;*/
     margin-top: 100px;
     padding: 10px;
 }
