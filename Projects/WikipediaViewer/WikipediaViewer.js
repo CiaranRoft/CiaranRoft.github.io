@@ -4,10 +4,15 @@ $(document).ready(function(){
     	// Only fires when the Enter button is pressed
     	if(event.which === 13){
     		var input = ($("#wiki_input").val());
-    		var url = buildAPI(input);
-    		$("#wiki_results").html(""); // Cleaning thr
-    		requestData(url);
-    		$("#wiki_input").val("");
+    		$("#wiki_results").html(""); // Cleaning the display
+    		// In the case of nothing bveing entered into the text box
+    		if(input.length !== 0){
+	    		var url = buildAPI(input); // building the API key
+	    		requestData(url); // Fetching the data
+	    		$("#wiki_input").val(""); // Clearing the input
+    		}else{
+    			renderError(); // Incase of an error 
+    		}
     	}
     });    
 });
@@ -22,6 +27,9 @@ function buildAPI(input){
 function requestData(url){
 	$.getJSON(url, function(data){
     	
+    	if(data[1].length < 4)
+    		renderError();
+
 		for (var i = 0; i < data[1].length; i++) {
 			var articleTitle = data[1][i];
 			var articleDesc = data[2][i];
@@ -44,9 +52,17 @@ function renderHTML(title, description, link){
 	
 	$("#wiki_results").append(html);
 }
+
 function addStyle(){
 	$("h2").addClass("heading");// Styling the heading
 	$("p").addClass("description"); // Styling the heading
 }
 
+function renderError(){
+	console.log("Error!!!");
+
+	var icon = ""; // Error icon
+	var html = "<div class = 'error'>No empty strings or Gibberish allowed!</div>"
+	$("#wiki_results").append(html);
+}
 

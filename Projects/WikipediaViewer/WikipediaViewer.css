@@ -92,6 +92,14 @@ a{
 	color: #edd;
 }
 
+.error{
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Roboto Slab', serif;
+	color: red;
+	margin-top: 100px;
+}
+
 @media (min-width: 700px){
 
 	#wiki_results{
